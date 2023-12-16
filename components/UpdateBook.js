@@ -33,7 +33,10 @@ const UpdateBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:8080/api/books/${bookId}`, bookDetails)
+      .put(
+        `https://books-backend-m4slaxoduq-uc.a.run.app/api/books/?id=${bookId}`,
+        bookDetails
+      )
       .then(() => {
         navigate("/");
       })

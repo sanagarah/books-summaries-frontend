@@ -16,7 +16,10 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/users/signup", credentials);
+      await axios.post(
+        "https://books-backend-m4slaxoduq-uc.a.run.app/api/users/signup",
+        credentials
+      );
       toast.success("Account created successfully! Please login.");
       navigate("/login");
     } catch (error) {

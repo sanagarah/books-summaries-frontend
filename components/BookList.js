@@ -10,9 +10,7 @@ export default function BookList() {
 
   useEffect(() => {
     axios
-      .get(
-        "https://us-central1-the-final-project-408015.cloudfunctions.net/getAllBooks"
-      )
+      .get("https://getallbooks-m4slaxoduq-uc.a.run.app")
       .then((response) => {
         setBooks(response.data);
       })
@@ -48,11 +46,15 @@ export default function BookList() {
     };
 
     axios
-      .post("http://localhost:8080/graphql", graphqlQuery, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .post(
+        "https://books-backend-m4slaxoduq-uc.a.run.app/graphql",
+        graphqlQuery,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then(() => {
         // Remove the book from the list
         setBooks(books.filter((book) => book._id !== bookId));

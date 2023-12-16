@@ -23,9 +23,13 @@ export default function AddBook() {
     e.preventDefault();
     const token = localStorage.getItem("token");
     axios
-      .post("http://localhost:8080/api/books", bookDetails, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .post(
+        "https://books-backend-m4slaxoduq-uc.a.run.app/api/books",
+        bookDetails,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then((response) => {
         toast.success("Book added successfully!");
         navigate("/");

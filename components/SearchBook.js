@@ -19,8 +19,7 @@ export default function SearchBook({ pullSearchResult }) {
       `,
     };
 
-    const graphqlEndpoint =
-      "https://us-central1-the-final-project-408015.cloudfunctions.net/search-Book";
+    const graphqlEndpoint = "https://booksearch-m4slaxoduq-uc.a.run.app";
 
     axios
       .post(graphqlEndpoint, graphqlQuery, {

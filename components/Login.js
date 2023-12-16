@@ -55,7 +55,4 @@ export default function Login() {
           placeholder="Password"
         />
         <button type="submit">Login</button>
-      </form>
-    </div>
-  );
-}
+      </

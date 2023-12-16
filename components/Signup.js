@@ -57,4 +57,8 @@ export default function SignUp() {
           onChange={handleChange}
           placeholder="Password"
         />
-        <button type="submit">S
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  );
+}

@@ -35,3 +35,16 @@ export default function SearchBook({ pullSearchResult }) {
         }
       })
       .catch((error) => console.error("Error searching books:", error));
+  };
+
+  return (
+    <div className="search-book">
+      <input
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search for a book"
+      />
+      <button onClick={handleSearch}>Search</button>
+    </div>
+  );
+}

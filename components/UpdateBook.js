@@ -79,4 +79,9 @@ const UpdateBook = () => {
           placeholder="Summary"
         />
         <button type="submit">Update Book</button>
-      </f
+      </form>
+    </div>
+  );
+};
+
+export default UpdateBook;

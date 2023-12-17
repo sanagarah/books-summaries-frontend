@@ -10,7 +10,7 @@ export default function BookList() {
 
   useEffect(() => {
     axios
-      .get("https://getallbooks-m4slaxoduq-uc.a.run.app")
+      .get("https://rest-api-gateway-13rg1aac.ew.gateway.dev/getAllBooks")
       .then((response) => {
         setBooks(response.data);
       })

@@ -1,19 +1,25 @@
-FROM node as build-stage
+FROM node as build
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json .
+COPY package-lock.json* .
 
 RUN npm install
 
 COPY . .
 
-RUN npx parcel build
+RUN npx parcel build index.html
 
-FROM nginx:alpine
+FROM node:slim
 
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+WORKDIR /app
 
-EXPOSE 80
+RUN npm install -g serve
 
-CMD ["nginx", "-g", "daemon off;"]
+COPY --from=build /app/dist /app
+
+# Expose the port the app runs on
+EXPOSE 8080
+
+CMD ["serve", "-s", "-l", "8080", "/app"]

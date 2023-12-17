@@ -22,4 +22,5 @@ COPY --from=build /app/dist /app
 # Expose the port the app runs on
 EXPOSE 8080
 
-CMD ["serve", "-s", "-l", "8080", "/app"]
+CMD ["serve", "-s", "-l", "8080", "--no-clipboard", "/app"]
+
